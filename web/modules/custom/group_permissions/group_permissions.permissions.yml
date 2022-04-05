@@ -1,0 +1,4 @@
+bypass group access checks:
+  title: 'Bypass Group access checks'
+  description: 'View, edit and delete all content regardless of Group access permission restrictions.'
+  restrict access: true

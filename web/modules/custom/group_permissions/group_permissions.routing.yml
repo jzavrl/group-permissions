@@ -1,0 +1,10 @@
+group_permissions.toggle_permissions_debugging_form:
+  path: '/admin/config/group-permissions/permissions'
+  defaults:
+    _form: '\Drupal\group_permissions\Form\TogglePermissionsDebuggingForm'
+    _title: 'Toggle permissions debugging'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

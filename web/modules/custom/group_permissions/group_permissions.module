@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Contains group_permissions.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function group_permissions_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the group_permissions module.
+    case 'help.page.group_permissions':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides custom permissions logic for users.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function group_permissions_entity_type_alter(array &$entity_types) {
+  // Load the access manager and update the access handler on specified
+  // entities.
+  $access_manager = \Drupal::service('group_permissions.access_manager');
+  foreach ($access_manager->getEntityAccessHandler() as $type => $handler) {
+    if (isset($entity_types[$type])) {
+      $entity_types[$type]->setHandlerClass('access', $handler);
+    }
+  }
+}

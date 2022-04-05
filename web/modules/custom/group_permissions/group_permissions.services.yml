@@ -1,0 +1,7 @@
+services:
+  group_permissions.access_manager:
+    class: Drupal\group_permissions\Access\AccessManager
+    arguments: ['@entity_type.manager', '@logger.factory', '@plugin.manager.group_content_enabler', '@plugin.manager.access_special_case', '@group.membership_loader', '@config.factory', '@messenger']
+  plugin.manager.access_special_case:
+    class: Drupal\group_permissions\Plugin\AccessSpecialCaseManager
+    parent: default_plugin_manager

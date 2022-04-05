@@ -1,0 +1,5 @@
+name: 'Group Permissions'
+type: module
+description: 'Provides custom permissions logic for users.'
+core_version_requirement: ^8 || ^9
+package: 'Custom'

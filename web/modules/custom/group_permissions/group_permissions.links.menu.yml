@@ -1,0 +1,4 @@
+group_permissions.toggle_permissions_debugging_form:
+  title: 'Toggle permissions debugging'
+  route_name: group_permissions.toggle_permissions_debugging_form
+  description: 'Toggle message or log permissions debugging'
